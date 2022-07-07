@@ -1,0 +1,22 @@
+{
+  "name": "platzi-jest",
+  "version": "1.0.0",
+  "description": "Trying first time tests with Jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "React",
+    "Webpack",
+    "Babel",
+    "JavaScript",
+    "React-router",
+    "Redux"
+  ],
+  "author": "Adrian Garcia @adranuz <garciasaaib@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^28.1.2"
+  }
+}
