@@ -4,7 +4,8 @@
   "description": "Trying first time tests with Jest",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "keywords": [
     "React",
