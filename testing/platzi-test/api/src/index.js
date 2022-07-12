@@ -6,5 +6,5 @@ const app = createApp();
 app.listen(config.port, (err) => {
   if (err) {
     console.error('Error: ', err);
-  }
+  } else console.log(`Port: ${config.port}`)
 });
