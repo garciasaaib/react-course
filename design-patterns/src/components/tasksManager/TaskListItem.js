@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import TaskRepository from './taskRepo'
 
 export default class TaskListItem extends Component {
 
@@ -14,13 +15,13 @@ export default class TaskListItem extends Component {
         if (!this.state.completed) {
             console.log(`Completing task ${this.state.name}`);
             this.setState({ completed: true });
-            // this.save()
+            this.save()
         }
     }
 
     save() {
-        console.log(`Saving task ${this.name}`);
-        this.taskRepository.save(this.name)
+        console.log(`Saving task ${this.state.name}`);
+        TaskRepository.save(this.state.name)
     }
 
     render() {
