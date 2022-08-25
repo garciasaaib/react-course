@@ -1,13 +1,16 @@
 export default (function TaskRepository() {
     var db = {}
+    var called = 0
 
     var get = function (id) {
-        console.log('Getting Task ' + id)
+        called++
+        console.log(`Getting Task ${id} called ${called} times`)
         return { name: 'New task from db'}
     }
 
     var save = function (task) {
-        console.log(`Saving ${task} to the db`)
+        called++
+        console.log(`Saving ${task} to the db, called ${called} times`)
     }
 
     return {

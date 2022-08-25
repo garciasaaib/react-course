@@ -12,11 +12,10 @@ export default class TaskListItem extends Component {
     }
 
     complete() {
-        if (!this.state.completed) {
-            console.log(`Completing task ${this.state.name}`);
-            this.setState({ completed: true });
-            this.save()
-        }
+        // if (this.state.completed) return
+        console.log(`Completing task ${this.state.name}`);
+        this.setState({ completed: true });
+        this.save()
     }
 
     save() {
