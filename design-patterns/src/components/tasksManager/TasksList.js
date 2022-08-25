@@ -1,22 +1,17 @@
-import React, {useState} from 'react'
-import Task from './constructorTask'
+import React, { useState } from 'react'
+import Task from './TaskListItem'
 export default function TasksList() {
 
     const [tasks] = useState([
-        new Task({ name: 'task 1' }),
-        new Task({ name: 'task 2' }),
-        new Task({ name: 'task 3', completed: true })
+        <Task name='task 1' />,
+        <Task name='task 2' />,
+        <Task name='task 3' completed={true} />,
     ])
-    // console.log(tasks)
+
     return (
-        <ul>
+        <ul className='list-group'>
             {tasks.map((task, i) => (
-            <li className="card" key={i} >
-                <label htmlFor={task.name}>
-                    <input type="checkbox" onChange={() => task.complete()} id={task.name} defaultChecked={task.completed}/>
-                        {task.name}
-                </label>
-            </li>
+                <li className="list-group-item-action list-group-item"key={i}>{task}</li>
             ))}
         </ul>
     )
