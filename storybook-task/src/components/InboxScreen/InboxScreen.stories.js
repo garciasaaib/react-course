@@ -1,9 +1,9 @@
 import React from 'react';
 
 import InboxScreen from './InboxScreen';
-import store from '../lib/store';
+import store from '../../lib/store';
 import { rest } from 'msw';
-import { MockedState } from './TaskList.stories';
+import { MockedState } from '../TaskList/TaskList.stories';
 import { Provider } from 'react-redux';
 
 import {
@@ -15,7 +15,7 @@ import {
 
 export default {
   component: InboxScreen,
-  title: 'InboxScreen',
+  title: 'Workshop/InboxScreen',
   decorators: [(story) => <Provider store={store}>{story()}</Provider>],
 };
 
