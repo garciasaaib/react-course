@@ -53,6 +53,7 @@ input[type="submit"] {
   -webkit-appearance: button;
 }
 
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -457,4 +458,47 @@ textarea {
   display: inline-block;
   vertical-align: top;
   max-width: 100%;
+}
+
+
+
+
+.tip-wrapper {
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.tip-wrapper svg {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin-right: 4px;
+  vertical-align: top;
+  margin-top: 3px;
+}
+
+.tip-wrapper svg path {
+  fill: #1ea7fd;
+}
+
+.tip-wrapper {
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.tip-wrapper svg {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  margin-right: 4px;
+  vertical-align: top;
+  margin-top: 3px;
+}
+
+.tip-wrapper svg path {
+  fill: #1ea7fd;
 }
