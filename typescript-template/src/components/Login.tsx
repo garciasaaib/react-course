@@ -1,53 +1,8 @@
-import { useEffect, useReducer } from 'react'
-
-// AuthState es la estructura de la data que se estará manejando
-interface AuthState {
-    validating: boolean;
-    token: string | null;
-    username: string;
-    name: string;
-}
-
-const initialState: AuthState = {
-    validating: true,
-    token: null,
-    username: '',
-    name: ''
-}
-
-// es menos facil expandir un action
-type AuthAction =
-    | { type: 'logout' }
-    | { type: 'login', payload: { username: string, name: string } }
-
-// authReducer debe ser tipo de initialState
-const authReducer = (state: AuthState, action: AuthAction): AuthState => {
-    switch (action.type) {
-        case 'logout':
-            return {
-                ...state,
-                validating: false,
-                token: null,
-                name: '',
-                username: '',
-            }
-
-        default:
-            return state
-    }
-}
-
+import {useAuth} from '../hooks/useAuth'
 
 export const Login = () => {
-    const [{ validating, token, name }, dispatch] = useReducer(authReducer, initialState)
-
-
-    useEffect(() => {
-        setTimeout(() => {
-            dispatch({ type: 'logout' })
-        }, 1500);
-    }, [])
-
+    const {login, logout, authData} = useAuth()
+    const {name, token, validating} = authData
     if (validating) {
         return (
             <>
@@ -68,8 +23,8 @@ export const Login = () => {
 
             {
                 (!token)
-                    ? <button className='btn btn-primary'>Login</button>
-                    : <button className='btn btn-danger'>Logout</button>
+                    ? <button onClick={login} className='btn btn-primary'>Login</button>
+                    : <button onClick={logout} className='btn btn-danger'>Logout</button>
             }
         </>
     )
