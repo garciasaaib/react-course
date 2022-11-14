@@ -1,0 +1,29 @@
+{
+  "name": "react-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": [
+    "desing-patterns",
+    "storybook-task",
+    "testing/curso-testing-js",
+    "testing/platzi-jest",
+    "testing/platzi-jest-react",
+    "testing/platzi-test",
+    "jonmircha"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adranuz/react-course.git"
+  },
+  "keywords": [],
+  "author": "@adranuz <garciasaaib@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adranuz/react-course/issues"
+  },
+  "homepage": "https://github.com/adranuz/react-course#readme"
+}
