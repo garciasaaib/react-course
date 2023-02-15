@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
 // hoc, componente contenedor de la logica y del componente hijo
 const withControlledForm = (Form, initialState = {}) => {

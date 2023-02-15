@@ -1,8 +1,15 @@
 import React from 'react';
 
+import {Player} from './player';
+import { PlayerReduccer } from './player-reducer';
+
 export const StateReducerPage = () => (
   <>
-    <h2>State Reducer</h2>
-    <p>Sigue las instrucciones que vienen en el curso.</p>
+    <h2>Ejemplo sin State Reducer</h2>
+    <Player />
+
+    <hr />
+    <h2>Ejemplo con State Reducer</h2>
+    <PlayerReduccer />
   </>
 );

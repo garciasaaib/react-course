@@ -1,3 +1,3 @@
-import {StateReducerPage} from './components/state-reducer-page';
+import { StateReducerPage } from './components/state-reducer-page';
 
-export {StateReducerPage};
+export { StateReducerPage };

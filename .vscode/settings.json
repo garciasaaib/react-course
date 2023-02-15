@@ -1,5 +1,3 @@
 {
-  "conventionalCommits.scopes": [
-    "asda"
-  ]
+  "editor.tabSize": 2
 }
