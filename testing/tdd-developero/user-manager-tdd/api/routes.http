@@ -1,0 +1,25 @@
+@hostname = localhost
+@port = 8080
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG4uZG9lQG1haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjk3NTY0MjcyfQ.WOKMP8ilS2RcT1Q-ZsOe5ocrgxCe8Osjpp9tD2wvffw
+# POST /login
+POST http://{{host}}/login HTTP/1.1
+Content-Type: {{contentType}}
+
+{
+    "email": "john.doe@mail.com",
+    "password": "123456"
+}
+
+### GET All users
+GET http://{{host}}/users HTTP/1.1
+Content-Type: {{contentType}}
+Authorization: {{token}}
+
+### DELETE User
+# @prompt: id
+DELETE http://{{host}}/users/15291f3c-e094-4ce8-9e51-2399b8d7e91c HTTP/1.1
+Content-Type: {{contentType}}
+Authorization: {{token}}
