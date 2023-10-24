@@ -3,6 +3,8 @@ import { LoginPage } from "./login-page";
 import userEvent from "@testing-library/user-event";
 
 const getSubmitButton = () => screen.getByRole("button", { name: /submit/i });
+const emailInput = () => screen.getByLabelText(/email/i)
+const passwordInput = () => screen.getByLabelText(/password/i)
 /**
  * El texto en el test es normalmente un acceptance criteria, pero puede ser lo que tu quieras.
  * Con getByRole le decimos que hay un encabezado con la palabra login.
@@ -24,8 +26,8 @@ test("It should render the login title", () => {
  */
 test("it should render the form elements", () => {
 	render(<LoginPage />);
-	expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
-	expect(screen.getByLabelText(/password/i)).toBeInTheDocument();
+	expect(emailInput()).toBeInTheDocument();
+	expect(passwordInput()).toBeInTheDocument();
 	expect(getSubmitButton()).toBeInTheDocument();
 });
 
@@ -42,3 +44,30 @@ test("it should validate the inputs as required", async () => {
 	expect(await screen.findByText(/email is required/i)).toBeInTheDocument();
 	expect(await screen.findByText(/password is required/i)).toBeInTheDocument();
 });
+
+test("it should validate the email input as email", async () => {
+	render(<LoginPage />);
+
+  // type email
+	await userEvent.type(emailInput(), 'fulanitodetal');
+	await userEvent.type(passwordInput(), 'fulanitodetal');
+  await userEvent.click(getSubmitButton());
+
+  // expect validation errors
+  expect(await screen.findByText(/Email is not valid/i)).toBeInTheDocument();
+})
+
+test('it should disable the submit button while is fetching', async () => {
+	render(<LoginPage />);
+
+	// submit button shouldnt be disabled
+	expect(getSubmitButton()).not.toBeDisabled();
+
+	// valid values on inputs
+	await userEvent.type(emailInput(), 'john.dow@mail.com');
+	await userEvent.type(passwordInput(), '123456');
+  await userEvent.click(getSubmitButton());
+
+	// validate that boton in disabled
+	expect(getSubmitButton()).toBeDisabled();
+})

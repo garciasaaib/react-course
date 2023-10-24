@@ -1,12 +1,17 @@
 import { Typography, TextField, Button } from "@mui/material";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { loginResolver } from "./login-schema";
+import axios from "axios";
+import { useState } from "react";
 
 interface Inputs {
 	email: string;
 	password: string;
 }
 
+const loginService = async (email:string, password:string) => {
+	const response = await axios.post('/login', {email, password})
+}
 
 export const LoginPage = (): JSX.Element => {
   /**
@@ -14,14 +19,19 @@ export const LoginPage = (): JSX.Element => {
    * handleSubmit: se encarga de validar el formulario y ejecutar la funcion onSubmit
    * errors: objeto con los errores de validacion
    */
+	const [isLoading, setIsLoading] = useState(false)
+	
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<Inputs>({ resolver: loginResolver});
-	const onSubmit: SubmitHandler<Inputs> = (data) => {
-		console.log('data');
+	
+	const onSubmit: SubmitHandler<Inputs> = async ({email, password}) => {
+		setIsLoading(true)
+		await loginService(email, password)
 	};
+
 	return (
 		<>
 			<Typography component="h1">Login</Typography>
@@ -37,7 +47,7 @@ export const LoginPage = (): JSX.Element => {
 					type="password"
 					helperText={errors.password?.message}
 				/>
-				<Button type="submit">Submit</Button>
+				<Button disabled={isLoading} type="submit">Submit</Button>
 			</form>
 		</>
 	);

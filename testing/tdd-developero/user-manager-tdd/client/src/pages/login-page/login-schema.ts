@@ -2,7 +2,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 
 export const loginSchema = yup.object({
-  email: yup.string().email().required('Email is required'),
+  email: yup.string().email('Email is not valid').required('Email is required'),
   password: yup.string().required('Password is required'),
 }).required();
 
