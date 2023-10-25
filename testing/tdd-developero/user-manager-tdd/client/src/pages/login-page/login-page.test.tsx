@@ -1,10 +1,16 @@
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { LoginPage } from "./login-page";
 import userEvent from "@testing-library/user-event";
+import { renderWithProviders } from "../../mocks/render-width-providers";
+
+
 
 const getSubmitButton = () => screen.getByRole("button", { name: /submit/i });
 const emailInput = () => screen.getByLabelText(/email/i)
 const passwordInput = () => screen.getByLabelText(/password/i)
+
+
+
 /**
  * El texto en el test es normalmente un acceptance criteria, pero puede ser lo que tu quieras.
  * Con getByRole le decimos que hay un encabezado con la palabra login.
@@ -14,7 +20,7 @@ const passwordInput = () => screen.getByLabelText(/password/i)
  * siendo el tag contenedor un h1 - h5
  */
 test("It should render the login title", () => {
-	render(<LoginPage />);
+	renderWithProviders(<LoginPage />);
 
 	expect(screen.getByRole("heading", { name: /login/i })).toBeInTheDocument();
 });
@@ -25,7 +31,7 @@ test("It should render the login title", () => {
  * 3 paso: reafactor sin dejar de pasar el test
  */
 test("it should render the form elements", () => {
-	render(<LoginPage />);
+	renderWithProviders(<LoginPage />);
 	expect(emailInput()).toBeInTheDocument();
 	expect(passwordInput()).toBeInTheDocument();
 	expect(getSubmitButton()).toBeInTheDocument();
@@ -35,7 +41,7 @@ test("it should render the form elements", () => {
  * Testeo despues de interactuar con un formulario
  */
 test("it should validate the inputs as required", async () => {
-	render(<LoginPage />);
+	renderWithProviders(<LoginPage />);
 
 	// submit form
 	await userEvent.click(getSubmitButton());
@@ -46,7 +52,7 @@ test("it should validate the inputs as required", async () => {
 });
 
 test("it should validate the email input as email", async () => {
-	render(<LoginPage />);
+	renderWithProviders(<LoginPage />);
 
   // type email
 	await userEvent.type(emailInput(), 'fulanitodetal');
@@ -58,7 +64,7 @@ test("it should validate the email input as email", async () => {
 })
 
 test('it should disable the submit button while is fetching', async () => {
-	render(<LoginPage />);
+	renderWithProviders(<LoginPage />);
 
 	// submit button shouldnt be disabled
 	expect(getSubmitButton()).not.toBeDisabled();
