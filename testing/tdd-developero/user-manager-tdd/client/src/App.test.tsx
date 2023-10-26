@@ -1,9 +1,10 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import App from './App';
+import { renderWithProviders } from './mocks/render-width-providers';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('it should render the login page', () => {
+  renderWithProviders(<App />);
+
+  const headingLogin = screen.getByRole('heading',{name: /login/i});
+  expect(headingLogin).toBeInTheDocument();
 });
