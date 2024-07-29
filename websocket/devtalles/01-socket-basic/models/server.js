@@ -20,7 +20,12 @@ class Server {
 
   middlewares() {
     const pathIndex = path.resolve(__dirname, '../public')
+
+    // chat publico en /
     this.app.use(express.static(pathIndex));
+
+    // cors
+    this.app.use(cors())
   }
 
   configSockets() {
