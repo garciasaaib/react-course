@@ -1,10 +1,12 @@
 import { ProductButtons, ProductImage, ProductTitle, ProductCard } from "../components";
+import '../styles/custom-styles.css';
 
 const product = {
 	id: "asdfasdfs",
 	title: "sdfasdf",
 	img: "",
 };
+
 export const ShoppingPage = () => {
 	return (
 		<div>
@@ -26,10 +28,10 @@ export const ShoppingPage = () => {
 				</ProductCard> */}
 
 				{/* HOC & Compount Component Pattern*/}
-				<ProductCard product={product}>
-					<ProductCard.Image />
-					<ProductCard.Title />
-					<ProductCard.Buttons />
+				<ProductCard product={product} className="bg-dark">
+					<ProductCard.Image className="custom-image"/>
+					<ProductCard.Title className="text-white"/>
+					<ProductCard.Buttons className="custom-buttons" />
 				</ProductCard>
 
         <ProductCard product={product}>
@@ -38,6 +40,11 @@ export const ShoppingPage = () => {
 					<ProductButtons />
 				</ProductCard>
 
+        <ProductCard product={product} style={{backgroundColor: "#70D1F8"}}>
+					<ProductImage />
+					<ProductTitle />
+					<ProductButtons />
+				</ProductCard>
 			</div>
 		</div>
 	);
