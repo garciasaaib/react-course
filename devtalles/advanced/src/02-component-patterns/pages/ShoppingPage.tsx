@@ -1,13 +1,16 @@
-import { ProductButtons, ProductImage, ProductTitle, ProductCard } from "../components";
-import '../styles/custom-styles.css';
-
-const product = {
-	id: "asdfasdfs",
-	title: "sdfasdf",
-	img: "",
-};
+import {
+	ProductButtons,
+	ProductImage,
+	ProductTitle,
+	ProductCard,
+} from "../components";
+import "../styles/custom-styles.css";
+import { products } from "../data/products";
+import { useShoppingCart } from "../hooks/useShoppingCart";
 
 export const ShoppingPage = () => {
+	// es importante que la lista de productos y el cart esten en diferentes endpoints
+	const { shoppingCart, onProductCountChange } = useShoppingCart();
 	return (
 		<div>
 			<h1>Shopping Store</h1>
@@ -20,31 +23,37 @@ export const ShoppingPage = () => {
 					flexDirection: "row",
 				}}
 			>
-        {/* HOC */}
-				{/* <ProductCard product={product}>
-					<ProductImage img={product.img} />
-					<ProductTitle title={product.title} />
-					<ProductButtons increaseBy={increaseBy} counter={counter} />
-				</ProductCard> */}
+				{products.map((product) => (
+					<ProductCard
+						key={product.id}
+						product={product}
+						onChange={onProductCountChange}
+						value={shoppingCart[product.id]?.count || 0}
+					>
+						<ProductImage />
+						<ProductTitle />
+						<ProductButtons />
+					</ProductCard>
+				))}
+			</div>
 
-				{/* HOC & Compount Component Pattern*/}
-				<ProductCard product={product} className="bg-dark">
-					<ProductCard.Image className="custom-image"/>
-					<ProductCard.Title className="text-white"/>
-					<ProductCard.Buttons className="custom-buttons" />
-				</ProductCard>
+			<div className="shopping-cart">
+				{Object.values(shoppingCart).map((product) => (
+					<ProductCard
+						key={product.id}
+						product={product}
+						style={{ width: "100px" }}
+						value={product.count}
+						onChange={onProductCountChange}
+					>
+						<ProductImage />
+						<ProductButtons />
+					</ProductCard>
+				))}
+			</div>
 
-        <ProductCard product={product}>
-					<ProductImage />
-					<ProductTitle title="alo" />
-					<ProductButtons />
-				</ProductCard>
-
-        <ProductCard product={product} style={{backgroundColor: "#70D1F8"}}>
-					<ProductImage />
-					<ProductTitle />
-					<ProductButtons />
-				</ProductCard>
+			<div>
+				<code>{JSON.stringify(shoppingCart, null, 2)}</code>
 			</div>
 		</div>
 	);

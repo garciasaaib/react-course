@@ -1,6 +1,6 @@
 import { CSSProperties, useContext } from "react";
-import { ProductContext } from "./ProductCard";
 import styles from "../styles/styles.module.css";
+import { ProductContext } from "../context/ProductContext";
 
 export interface ProductButtonsProps {
   className?: string;
