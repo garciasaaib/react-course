@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Counter /> Debe mostrar <Counter /> correctamente 1`] = `
+<div>
+  <div>
+    <h2>
+      Counter: 
+      0
+    </h2>
+    <button>
+      Add
+    </button>
+    <button>
+      Reset
+    </button>
+    <button>
+      Substract
+    </button>
+  </div>
+</div>
+`;

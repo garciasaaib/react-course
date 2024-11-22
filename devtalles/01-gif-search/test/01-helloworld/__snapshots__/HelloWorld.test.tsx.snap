@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Esta es una prueba que no puede fallar Esta es una prueba que no puede fallar 1`] = `
+<div>
+  <section>
+    <h1
+      class="custom inline"
+      data-testid="test-title"
+      style="background: teal;"
+    >
+      holamundo
+    </h1>
+    <div>
+      <h2>
+        Counter: 
+        1
+      </h2>
+      <button>
+        Add
+      </button>
+      <button>
+        Reset
+      </button>
+      <button>
+        Substract
+      </button>
+    </div>
+  </section>
+</div>
+`;

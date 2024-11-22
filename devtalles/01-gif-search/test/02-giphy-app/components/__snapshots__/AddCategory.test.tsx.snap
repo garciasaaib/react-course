@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddCategory /> Debe crear en snapshoot de AddCategory 1`] = `
+<div>
+  <form
+    aria-label="form"
+  >
+    <input
+      placeholder="Buscar gifs"
+      type="text"
+      value=""
+    />
+  </form>
+</div>
+`;
+
+exports[`<AddCategory /> Debe crear un input en AddCategory 1`] = `
+<div>
+  <form
+    aria-label="form"
+  >
+    <input
+      placeholder="Buscar gifs"
+      type="text"
+      value=""
+    />
+  </form>
+</div>
+`;

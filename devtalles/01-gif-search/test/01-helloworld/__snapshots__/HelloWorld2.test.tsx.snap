@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HelloWorld /> Debe hacer match con el snapshoot 1`] = `
+<div>
+  <section>
+    <h1
+      class="custom inline"
+      data-testid="test-title"
+      style="background: teal;"
+    >
+      holoroco
+    </h1>
+    <div>
+      <h2>
+        Counter: 
+        1
+      </h2>
+      <button>
+        Add
+      </button>
+      <button>
+        Reset
+      </button>
+      <button>
+        Substract
+      </button>
+    </div>
+  </section>
+</div>
+`;

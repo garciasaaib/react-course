@@ -1,6 +1,5 @@
 import { GiphyResponseSuccess } from "../api/giphy"
 
-
 export type Gif = {
   id: string
   title: string
