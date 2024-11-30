@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductCard /> should show the component with the product name 1`] = `
+<div
+  className="productCard undefined"
+>
+  <h1>
+    ProductCard
+  </h1>
+</div>
+`;
+
+exports[`<ProductCard /> should show the component with the product name 2`] = `
+<div
+  className="productCard undefined"
+>
+  <h1>
+    ProductCard
+  </h1>
+  <span>
+    0
+  </span>
+  <button
+    onClick={[Function]}
+  >
+    Increase
+  </button>
+</div>
+`;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductTitle /> renders without crashing 1`] = `
+<img
+  alt="Product image"
+  className="productImg "
+  src="https://image.com"
+/>
+`;
+
+exports[`<ProductTitle /> should show the component with the product name 1`] = `
+<div
+  className="productCard undefined"
+>
+  <img
+    alt="Product image"
+    className="productImg "
+    src="./coffee-mug.png"
+  />
+</div>
+`;
