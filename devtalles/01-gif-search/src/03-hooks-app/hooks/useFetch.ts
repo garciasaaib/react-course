@@ -57,7 +57,7 @@ export const useFetch = <T>(url: string) => {
       })
       return;
     }
-    
+
     // si no da error obtiene la data y pone la info en el state
     // y despues lo guarda en cache con la url como key
     const data = await res.json()
@@ -73,8 +73,7 @@ export const useFetch = <T>(url: string) => {
   useEffect(() => {
     getFetch()
   }, [url])
-  
-  
+
   return {
     ...state
   }

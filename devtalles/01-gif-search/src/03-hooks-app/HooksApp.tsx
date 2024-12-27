@@ -10,6 +10,7 @@ import { UseMemo } from "./components/Memos/UseMemo"
 import { UseCallback } from "./components/Memos/UseCallback"
 import { UseCallback2 } from "./components/Memos/UseCallback2"
 import { TodoApp } from "./components/Reducer/TodoApp"
+import { MainApp } from "./components/Context/MainApp"
 // import './components/Reducer/intro-reducer'
 export const HooksApp = () => {
   return (
@@ -25,7 +26,8 @@ export const HooksApp = () => {
       {/* <UseMemo /> */}
       {/* <UseCallback /> */}
       {/* <UseCallback2 /> */}
-      <TodoApp />
+      {/* <TodoApp /> */}
+      <MainApp />
     </div>
   )
 }
