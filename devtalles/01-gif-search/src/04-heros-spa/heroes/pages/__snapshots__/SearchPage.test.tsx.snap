@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchPage should render the component 1`] = `
+<div>
+  <div>
+    <h1>
+      Search
+    </h1>
+    <hr />
+    <div>
+      <form>
+        <input
+          autocomplete="off"
+          class="search-input"
+          name="searchText"
+          placeholder="Search a hero..."
+          type="search"
+        />
+        <button
+          class="btn"
+        >
+          Send
+        </button>
+      </form>
+    </div>
+    <div>
+      <h4>
+        Results:
+      </h4>
+      <div
+        class="alert alert-primary animate__animated animate__fadeIn"
+      >
+        Search Hero
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,11 +1,11 @@
 * {
   font-family: Helvetica, Arial, sans-serif;
-  background-color: rgb(234, 234, 234);
+  /* background-color: rgb(234, 234, 234); */
 }
 
-body {
+/* body {
   padding: 60px;
-}
+} */
 
 input {
   background-color: white;

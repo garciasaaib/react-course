@@ -7,7 +7,7 @@ interface Props {
 export const HeroCard = ({ hero }: Props) => {
 	const heroImgUrl = `/public/assets/heroes/${hero.id}.jpg`;
 	return (
-		<div className="card mb-3 w-44 h-100">
+		<article className="card mb-3 w-44 h-100">
 			<div>
 				<img className="animate__animated animate__fadeIn" src={heroImgUrl} alt={hero.superhero} />
 				<div>
@@ -22,6 +22,6 @@ export const HeroCard = ({ hero }: Props) => {
 					<Link className="hover:underline" to={`/hero/${hero.id}`}>Más...</Link>
 				</div>
 			</div>
-		</div>
+		</article>
 	);
 };

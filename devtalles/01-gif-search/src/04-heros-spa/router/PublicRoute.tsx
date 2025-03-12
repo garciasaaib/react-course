@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../auth/context/AuthContext";
+import { Navigate } from "react-router";
 
 /**
  * Evalua que el authState.logged para si no esta logueado mande la ruta /
@@ -8,5 +9,5 @@ import { AuthContext } from "../auth/context/AuthContext";
  */
 export const PublicRoute = ({ children }: { children: React.ReactNode }) => {
 	const { authState } = useContext(AuthContext);
-	return !authState.logged && children;
+	return !authState.logged ? children : <Navigate to="/marvel" />;
 };
